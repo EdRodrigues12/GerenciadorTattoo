@@ -1,0 +1,7 @@
+<form class="example-container">
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile class="example-full-width" *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+      <img [src]="tile.src">
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

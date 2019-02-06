@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="container">
+  <span>Uploads Tattos!</span>
+</mat-toolbar>
+
+<div class="container">
+    <input type="file"  mat-raised-button color="primary" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+    <form #imageForm=ngForm (ngSubmit)="OnSubmit(Caption,Image)">
+    <img [src]="imageUrl" style="width:250px;height:200px">
+    <div class="row">
+      <div class="input-field col s12">
+        <input type="text" #Caption [(ngModel)]="tattoo.imagemTattoo" name="file" id="file" required>
+        <label for="Caption">Titulo</label>
+      </div>
+    </div>
+    <button type="submit" mat-raised-button color="primary" [disabled]="Image.value=='' || !imageForm.valid" >Upload</button>
+    </form>
+</div>
